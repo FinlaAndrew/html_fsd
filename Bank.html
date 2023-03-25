@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bank Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <header>
+            <h1>Net Banking</h1>
+  
+        <nav>
+            <ul>
+                <li> <a href="file:///C:/Users/Administrator/eclipse-workspace/html/netbanking.html">Home </a> </li>
+                <li> <a href="#">About Us </a> </li>
+                <li> <a href="#">Net Banking </a> </li>
+                <li> <a href="#">Contact Us </a> </li>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+    <div class="container">
+        
+        <h2>Bank Form</h2>
+        <p>Current date :</p>
+    <p id="current-date"></p>
+
+    <script>
+      var currentDate = new Date();
+      document.getElementById("current-date").innerHTML = currentDate;
+    </script>
+    <script>
+        function calculateInterest(){
+        var p = document.getElementById("amount").value;
+        var r = document.getElementById("rate").value;
+        var t = document.getElementById("time").value;
+        var re=document.getElementById("interest")
+        var i = (p*r*t)/100;
+        document.getElementById("total").value = i;
+        }
+        
+      </script>
+    
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required> 
+            <label for="aadhar">Aadhar Number:</label>
+            <input pattern="[0-9]{12}"type="text" id="aadhar" name="aadhar" placeholder="Enter Aadhar Number" required>
+            <label for="pan">PAN Number:</label>
+            <input pattern="[A-Z]{5}[0-9]{4}[A-Z]"type="text" id="pan" name="pan" placeholder="Enter PAN Number" required>
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="time">Time:</label>
+            <input type="number" id="time" name="time" required>
+            <label for="rate">Rate:</label>
+            <input type="number" id="rate" name="rate" required>
+            <label for="total">Total Interest:</label>
+            <input type="number" id="total" name="total" required>
+            
+
+
+            
+        </form>
+        <button type="submit" onclick="submit()">Submit</button>
+        <script>
+            function submit()
+            {
+            alert('Submitted successfully');
+            }
+            </script>
+    
+        <button type="button" onclick="calculateInterest()">Calculate Interest</button>
+        
+    </div>
+    </head>
+    <body>
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html>
